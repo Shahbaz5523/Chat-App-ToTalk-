@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;  
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+section {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px 0px gray;
+}
+
+@media screen and (max-width:400px){
+    section{
+        width: auto !important;
+    }
+}
+
+section h1{
+    color: #79bbff;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+section div{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section div label{
+    margin: 5px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.75);
+}
+section div input{
+    padding: 3px;
+    min-width: 250px;
+    border-radius: 5px;
+    outline-color: #79bcff77;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid rgba(0, 0, 0, 0.33);
+}
+section div input::placeholder{
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.33);
+}
+section div a{
+    font-size: medium;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.55);
+    font-family: 'Montserrat', sans-serif;
+}
+.myButton {
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    padding: 8px 24px;
+    border-radius: 50px;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #84bbf3;
+    background-color: #79bbff;
+    text-shadow: 0px 1px 0px #528ecc;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    box-shadow:inset 0px 1px 0px 0px #bbdaf7, 5px 5px 10px 0px #bbdaf7, 0px 0px 5px 0px #84bbf3;
+}
+
+.myButton:hover {
+    background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color: #378de5;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
