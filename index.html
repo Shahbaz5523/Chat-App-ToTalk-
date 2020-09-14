@@ -8,14 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBgu7WnnoHVtyFQhYrwk0BpCf3ojQHM5mo",
+            authDomain: "totalk-a9da0.firebaseapp.com",
+            databaseURL: "https://totalk-a9da0.firebaseio.com",
+            projectId: "totalk-a9da0",
+            storageBucket: "totalk-a9da0.appspot.com",
+            messagingSenderId: "681768121607",
+            appId: "1:681768121607:web:73702d285e2ebd2d41c1a2",
+            measurementId: "G-V35JYKZNH1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            overflow: hidden;
             box-sizing: border-box;
-            /* background-color: #f1f2f3; */
+            overflow: hidden !important;
             font-family: 'Montserrat Alternates', sans-serif;
         }
 
@@ -28,11 +48,12 @@
             flex-direction: column;
             justify-content: center;
             background-color: #fff;
+            overflow: hidden !important;
             box-shadow: 0px 0px 1px 0px gray;
         }
 
-        @media screen and (max-width:400px){
-            section{
+        @media screen and (max-width:400px) {
+            section {
                 width: auto !important;
             }
         }
@@ -82,8 +103,8 @@
 <body>
 
     <section>
-        <svg class="animate__animated animate__fadeIn" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150" height="156" viewBox="0 0 172 172"
-            style=" fill:#000000;">
+        <svg class="animate__animated animate__fadeIn" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150"
+            height="156" viewBox="0 0 172 172" style=" fill:#000000;">
             <defs>
                 <radialGradient cx="67.5315" cy="85.6775" r="87.67431" gradientUnits="userSpaceOnUse"
                     id="color-1_curGeAHCtIUA_gr1">
@@ -147,9 +168,19 @@
             </g>
         </svg>
         <h1 class="animate__animated animate__fadeInLeft">Welcome to ToTalk</h1>
-        <p class="animate__animated animate__fadeInRight">Talk with your friends and family members, Share photos and Stickers etc</p>
-        <a href="login.html" style="text-decoration: none;" class="myButton animate__animated animate__fadeInUp">Start Talk</a>
+        <p class="animate__animated animate__fadeInRight">Talk with your friends and family members, Share photos and
+            Stickers etc</p>
+        <a href="login.html" style="text-decoration: none;" class="myButton animate__animated animate__fadeInUp">Start
+            Talk</a>
     </section>
+
+    <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                document.location.href='dashboard.html';
+            }
+        });
+    </script>
 
 </body>
 

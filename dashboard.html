@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ToTalk</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/52f08088b2.js" crossorigin="anonymous"></script>
+     <!-- Sweetalert -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBgu7WnnoHVtyFQhYrwk0BpCf3ojQHM5mo",
+            authDomain: "totalk-a9da0.firebaseapp.com",
+            databaseURL: "https://totalk-a9da0.firebaseio.com",
+            projectId: "totalk-a9da0",
+            storageBucket: "totalk-a9da0.appspot.com",
+            messagingSenderId: "681768121607",
+            appId: "1:681768121607:web:73702d285e2ebd2d41c1a2",
+            measurementId: "G-V35JYKZNH1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <section>
+        <header>
+            <img class="" title="Shahbaz Ali" src="img/IMG_20200331_150143_361.JPG" alt="user.jpg">
+            <i onclick="showMenu()" class="fas fa-ellipsis-v">
+                <ul id="dropDown">
+                    <li> <i class="fas fa-id-card"></i> Profile</li>
+                    <li>  <i class="fas fa-cog"></i> Setting</li>
+                    <li onclick="logout()"> <i class="fas fa-sign-out-alt"></i> Logout</li>
+                </ul>
+            </i>
+        </header>
+        <!-- <h1>Welcome to ToTalk Chat application</h1>
+
+        <p id="useremail">No user login right now</p>
+
+        <button onclick="logout()">logout</button> -->
+    </section>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
