@@ -58,6 +58,13 @@ section div input{
     font-family: 'Montserrat', sans-serif;
     border: 2px solid rgba(0, 0, 0, 0.33);
 }
+section div input[type="text"]{
+    background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.icons8.com%2Fcarbon-copy%2F2x%2Fname.png&f=1&nofb=1);
+    background-size: 20px;
+    background-position: left;
+    background-position-x: 5px;
+    background-repeat: no-repeat;
+}
 section div input[type="email"]{
     background: url(https://img.icons8.com/cotton/2x/secured-letter--v3.png);
     background-size: 20px;
@@ -108,4 +115,59 @@ section div a{
 .myButton:active {
     position: relative;
     top: 1px;
+}
+
+#or{
+    width: 80%;
+    height: 1px;
+    margin: 10px;
+    margin-top: 20px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+#or::after{
+    content: "or";
+    width: 25px;
+    top: -13px;
+    height: 25px;
+    display: flex;
+    color: white;
+    font-size: small;
+    border-radius: 50%;
+    position: absolute;
+    align-items: center;
+    left: calc(50% - 10px);
+    justify-content: center;
+    background-color: gray;
+}
+div>button#fb{
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    padding: 12px 24px;
+    border-radius: 2px;
+    padding-left: 40px;
+    background-color:#3b5998;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 0px 5px 0px #8b9dc3;
+    background: linear-gradient(#1877f2, #549af5);
+}
+div>button#fb::before{
+    content: "";
+    top: 0px;
+    left: 5px;
+    width: 50px;
+    height: 43px;
+    position: absolute;
+    background-color: #fff;
+    background: url(img/icon/fb.png);
+    background-position: left;
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+div>button#fb:hover{
+    /* opacity: 0.9; */
+    cursor: pointer;
 }
