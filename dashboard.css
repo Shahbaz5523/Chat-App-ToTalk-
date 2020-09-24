@@ -3,13 +3,12 @@
     padding:0;
 }
 body {
-    height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-section {
+section{
     width: 400px;
     height: 100%;
     display: flex;
@@ -20,8 +19,8 @@ section {
     box-shadow: 0px 0px 1px 0px gray;
 }
 
-@media screen and (max-width:400px) {
-    section {
+@media screen and (max-width:414px) {
+    section#main{
         width: auto !important;
     }
 }
@@ -50,22 +49,36 @@ section>header{
     box-shadow: 0px 0px 8px 0px #79bbff;
     background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
 }
-section>header>img{
-    width: 35px;
-    height: 35px;
-    object-fit: cover;
-    overflow: visible;
-    border-radius: 50%;
+section>header>span{
     position: relative;
 }
+section>header>span::after{
+    content: '';
+    width: 8px;
+    right: 10%;
+    bottom: 10%;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: lime;
+}
+section>header>span>img , #chatTab .userBox>div>span>img , #userTab .userBox>div>span>img ,  #talkBox>div>img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.invert-color{
+    filter: invert(0%) !important;
+}
 .default-img{
-    width: 20px;
-    height: 20px;
     padding: 5px;
     filter: invert(100%);
+    width: 25px !important;
+    height: 25px !important;
     background-color: black;
 }
-section>header>img:hover{
+section>header>span>img:hover , #chatTab .userBox>div>span>img:hover , #talkBox>div>img:hover{
     opacity: 0.8;
     cursor: pointer;
 }
@@ -132,4 +145,307 @@ section>header>i>ul>li>i{
 }
 section>header>i>ul>li:hover{
     color: rgba(0, 0, 0);
+}
+
+/* DashbardBody */
+
+section#DashbardBody{
+    width: 99%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: inherit;
+}
+section#DashbardBody .tabcontainer{
+    width: 100%;
+    display: flex;
+    color: gray;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+section#DashbardBody .tabcontainer .tab{
+    width: 50%;
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    font-size: small;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+section#DashbardBody .tabcontainer .tab i{
+    font-size: 1.3rem;
+}
+section#DashbardBody .tabcontainer .tab:hover{
+    transition: background-color 0.5s linear;
+    background-color: rgb(55, 141, 229,0.10);
+}
+.active{
+    color: #79bbff;
+    border-bottom: 3px solid #79bbff;
+    background-color: rgb(55, 141, 229,0.03);
+}
+
+/* SerchBox */
+section#DashbardBody #searchBox{
+    width: 90%;
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    background-color: white;
+    justify-content: flex-start;
+    border: 2px solid rgba(0, 0, 0, 0.14);
+}
+section#DashbardBody #searchBox input{
+    width: 90%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+section#DashbardBody #searchBox input::placeholder{
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.34);
+}
+section#DashbardBody #searchBox i{
+    color: rgba(0, 0, 0, 0.64);
+}
+/* chatTab */
+.changeTab{
+    display: block !important;
+}
+#chatTab , #userTab , #profileTab , #talkBox{
+    width: 100%;
+    /* height: 100vh; */
+    display: none;
+    overflow-y: auto;
+    background-color: white;
+    height: calc( 100vh - (60px + 60px));
+}
+#chatTab::-webkit-scrollbar , #userTab::-webkit-scrollbar , #profileTab::-webkit-scrollbar , .talkBoxBody::-webkit-scrollbar{
+    width: 0.3em;
+}
+ 
+#chatTab::-webkit-scrollbar-track , #userTab::-webkit-scrollbar-track , #profileTab::-webkit-scrollbar-track , .talkBoxBody::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+#chatTab::-webkit-scrollbar-thumb , #userTab::-webkit-scrollbar-thumb , #profileTab::-webkit-scrollbar-thumb , .talkBoxBody::-webkit-scrollbar-thumb {
+  background-color: #79bbff;
+  outline: 1px solid rgba(0, 0, 0, 0.226);
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+}
+#chatTab:last-child , #chatTab:last-child , #profileTab:last-child{
+    margin-bottom: 100px !important;
+}
+#chatTab .userBox, #userTab .userBox{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    width: calc(100% - 40px);
+    justify-content: flex-start;
+    box-shadow: 0px 0px 2px 0px gray;
+    background-color: rgba(211, 211, 211, 0.075);
+}
+#userTab .userBox{
+    padding: 6px;
+    box-shadow: none;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+}
+#userTab .userBox:last-child{
+    margin-bottom: 80px;
+}
+#chatTab .userBox:hover{
+    cursor: pointer;
+    transition: 0.3s linear;
+    background-color: rgba(211, 211, 211, 0.137);
+}
+#userTab .userBox:hover {
+    cursor: pointer;
+    transition: 0.3s linear;
+    background-color: rgba(211, 211, 211, 0.212);
+}
+#chatTab .userBox div:first-child , #userTab .userBox div:first-child , #profileTab .userBox div:first-child{
+    margin-right: 10px;
+}
+#chatTab{
+    height: calc(100vh - ((40px + 40px + 40px)*2));
+}
+.user-name{
+    margin: 5px;
+    font-size: small;
+    font-weight: bold;
+}
+.last-sms{
+    margin: 5px;
+    width: 200px;
+    color: gray;
+    font-size: small;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis
+}
+#newChatBtn button{
+    animation: pluse 1s ease-in-out 0s infinite;
+}
+@keyframes pluse{
+    0%{
+        box-shadow: 0px 0px 0px 0px #378de5;
+    }
+    50%{
+        box-shadow: 0px 0px 5px 0px #378de5;
+    }
+    100%{
+        box-shadow: 0px 0px 10px 0px #378de5;
+    }
+}
+/* Talk Box */
+#talkBox{
+    width: 400px !important;
+    height: 100vh;
+    display: none;
+    margin: 0 auto;
+    overflow: auto !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px 0px gray;
+}
+
+#talkBox .talkBoxHeader{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #378de5;
+    box-shadow: 0px 0px 5px 0px #79bbff;
+    background: linear-gradient(to bottom, #79bbff 2% , #378de5 98%);
+}
+#talkBox .talkBoxHeader img{
+    width: 35px !important;
+    height: 35px !important;
+    border: none !important;
+}
+#talkBox .talkBoxHeader img.small-img{
+    padding: 5px;
+    filter: invert(100%);
+    width: 23px !important;
+    height: 23px !important;
+}
+#talkBox .talkBoxHeader i{
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    margin-right: 10px;
+}
+#talkBox .talkBoxHeader p{
+    color: white;
+    font-size: small;
+}
+
+#talkBox .talkBoxBody{
+    width: 100%;
+    overflow-y: auto;
+    height: calc( 100vh - (57px + 57px));
+    background-color: rgba(245, 245, 245, 0.281);
+}
+#talkBox .talkBoxFooter{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(245, 245, 245, 0.281);
+}
+#talkBox .talkBoxFooter #sendSms{
+    width: 80%;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;   
+    /* border: 1px solid gray; */
+    box-shadow: 0px 0px 2px 0px rgba(128, 128, 128, 0.404);
+}
+#talkBox .talkBoxFooter #sendSms input{
+    width: 70%;
+    border: none;
+    outline: none;
+    margin: 10px;
+    padding: 2px;
+}
+#talkBox .talkBoxFooter #sendSms i{
+    font-size: large;
+    cursor: pointer;
+}
+#talkBox .talkBoxFooter #sendSms i:hover{
+    opacity: 0.5;
+}
+#send{
+    margin: 5px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #378de5;
+    box-shadow: 0px 0px 5px 0px #79bbff;
+}
+#send:hover{
+    opacity: 0.9;
+}
+#send i{
+    margin-left: -5px;
+    cursor: pointer;
+}
+@media screen and (max-width:414px) {
+    #talkBox{
+        width: auto !important;
+    }
+}
+
+/* message */
+.message{
+    width: auto;
+    margin: 20px;
+    padding: 10px;
+    border-radius:10px;
+    max-width: calc(100% - 60px);
+}
+.messageSend{
+    float: right;
+    clear: both;
+    background-color: #fff;
+    border-top-right-radius: 0px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.089);
+}
+.messageRecive{
+    float: left;
+    clear: both;
+    border-top-left-radius: 0px;
+    background-color: #79bbff;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.089);
+}
+.messageSendText{
+    font-size: 14px;
+    color: #79bbff;
+    font-weight: 600;
+    word-wrap: break-word; 
+}
+.messageReciveText{
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    word-wrap: break-word; 
 }
